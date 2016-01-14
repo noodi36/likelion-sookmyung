@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Likelion-Sookmyung</title>
+  <meta charset="UTF-8">
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    
+      <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+  
+  
+</head>
+<body>
+  
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <h3 class="text-muted"><a href="/">Likelion-Sookmyung</a></h3>
+      <ul class="nav nav-pills pull-left">
+        <li role="presentation"><a href="/home/about">소개</a></li>
+        <li role="presentation"><a href="/home/board">커뮤니티</a></li>
+        <li role="presentation"><a href="/home/link">링크</a></li>
+      </ul>
+      
+      <ul class="nav nav-pills pull-right">
+        <% if user_signed_in? %> <!-- 만약 유저가 로그인을 한 상태라면 --> 
+          <li role="presentation"><%= current_user.email %></li> <!-- 로그인한 유저의 이메일 정보를 출력 -->
+          <li role="presentation"><a href="/users/sign_out" data-method="delete">로그아웃</a></li> <!-- 로그아웃 버튼만 보이고 -->
+        <% else %> <!-- 로그인을 안 한 초기 상태라면 -->
+          <li role="presentation"><a href="/users/sign_in">로그인</a></li> <!-- 로그인 혹은 회원가입 버튼이 보여야겠지 -->
+          <li role="presentation"><a href="/users/sign_up">회원가입</a></li>
+        <% end %> <!-- if문 끝-->
+      </ul>
+
+    </nav>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
