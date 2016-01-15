@@ -1,27 +1,27 @@
+
+<div class="form-signin">
 <h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="SljrC49yCwKv5QBlsz3RNMXzWhdrH4w2yzPjPV43WAYYfUxj7HQaLyPmOPOdueVHAPoyq0ri7/EkVqcW8uL7mA==" />
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <label for="user_email">Email</label><br />
+    <input autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" />
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <label for="user_password">Password</label><br />
+    <input autocomplete="off" type="password" name="user[password]" id="user_password" />
   </div>
 
-  <% if devise_mapping.rememberable? -%>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+      <label for="user_remember_me">Remember me</label>
     </div>
-  <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <button type="submit" name="commit" class="btn btn-default btn-lg btn-block">로그인하기</button>
   </div>
-<% end %>
-
+</form>
 <%= render "devise/shared/links" %>
 
+
+</div> <!--form signin-->
