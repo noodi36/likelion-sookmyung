@@ -15,4 +15,16 @@ class HomeController < ApplicationController
     def link
         
     end
+    
+    def recruit
+        
+    end
+    
+    def likelion
+        
+    end
+    
+    def member
+        
+    end
 end
