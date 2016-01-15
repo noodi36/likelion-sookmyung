@@ -1,27 +1,24 @@
+<div class="form-user">
+<h2>로그인하기</h2>
 
-<div class="form-signin">
-<h2>Log in</h2>
 <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="SljrC49yCwKv5QBlsz3RNMXzWhdrH4w2yzPjPV43WAYYfUxj7HQaLyPmOPOdueVHAPoyq0ri7/EkVqcW8uL7mA==" />
   <div class="field">
-    <label for="user_email">Email</label><br />
-    <input autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" />
-  </div>
-
-  <div class="field">
-    <label for="user_password">Password</label><br />
-    <input autocomplete="off" type="password" name="user[password]" id="user_password" />
-  </div>
-
-    <div class="field">
-      <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
-      <label for="user_remember_me">Remember me</label>
+    <!-- 이메일 주소  -->
+    <label for="user_email" class="sr-only">Email</label><br />
+    <input autofocus="autofocus" type="email" class="form-control" name="user[email]" id="user_email" placeholder="이메일 주소" required autofocus>
+    <!-- 비밀번호  -->
+    <label for="user_password" class="sr-only">Password</label>
+    <input autocomplete="off" type="password" class="form-control" name="user[password]" id="user_password" placeholder="비밀번호" required autofocus>
+    <!-- 로그인 저장   -->
+    <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+    <label for="user_remember_me">Remember me</label>
     </div>
 
   <div class="actions">
-    <button type="submit" name="commit" class="btn btn-default btn-lg btn-block">로그인하기</button>
+    <button type="submit" name="commit" class="btn btn-default btn-lg btn-block">로그인</button>
   </div>
 </form>
 <%= render "devise/shared/links" %>
 
 
-</div> <!--form signin-->
+</div> <!--form user-->
